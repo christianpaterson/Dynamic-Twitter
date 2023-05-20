@@ -1,6 +1,6 @@
 # Dynamic-Twitter-Clone
 
-Live webpage can be viewed at: https://christianpaterson.github.io/Dynamic-Twitter-Clone/
+Live webpage can be viewed at: https://christianpaterson.github.io/Dynamic-Twitter/
 
 ## The challenge
 The challenge was to build out a dynamic twitter page that could accommodate any number of user's data!
