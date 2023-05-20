@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Twitter Clone</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <div id="container">
+            <div id="twitter-head"></div>
+            <div id="tweet-count"></div>
+            <div id="photo-container"></div> 
+        
+            <div id="profile-details-container">
+                <div id="follow-button-container">
+                    <img id="profile-avatar" src="https://pbs.twimg.com/profile_images/1383184766959120385/MM9DHPWC_400x400.jpg"></img>
+                    <a class="follow" href="#header-container"><button id="follow-button">Follow</button></a>
+                </div>
+            </div>
+            <div id="namesplat"></div>
+            <div id="datesplat"></div>
+            <div id="follow-count"></div>
+            <div class="tabs-container">
+                <a href= "#tweets-container" class="tabs" id="Tweets"><h6 class="tab">Tweets</h6></a>
+                <a href = "#tweets-container" class="tabs" id="Tweets & Replies"><h6 class="tab">Tweets & Replies</h6></a>
+                <a href= "#tweets-container" class="tabs" id="Media"><h6 class="tab">Media</h6></a>
+                <a href = "#tweets-container" class="tabs"id="Likes"> <h6 class="tab">Likes</h6></a>
+            </div>
+            <div id="tweets"></div>
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
