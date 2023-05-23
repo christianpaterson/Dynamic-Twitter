@@ -1,5 +1,4 @@
-
-var user1 = {
+let user1 = {
     userName: '@elonmusk',
     displayName: 'Elon Musk',
     joinedDate: 'June 2009',
@@ -23,7 +22,7 @@ var user1 = {
     ]
 };
 
-var user2 = {
+let user2 = {
     userName: '@BillGates',
     displayName: 'Bill Gates',
     joinedDate: 'June 2009',
@@ -48,3 +47,13 @@ var user2 = {
 };
 
 let urlParams = new URLSearchParams(window.location.search);
+let userInt = 0;
+
+// declare variables
+let users = [user1, user2];
+let outerContainer = document.getElementById('outer-container');
+let headerContainer = document.getElementById('header-container');
+let photoContainer = document.getElementById('photo-container');
+let profileContainer = document.getElementById('profile-container');
+let tabsContainer = document.getElementById('tabs-container');
+let tweetsContainer = document.getElementById('tweets-container');
