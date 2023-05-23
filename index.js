@@ -46,3 +46,5 @@ var user2 = {
         }
     ]
 };
+
+let urlParams = new URLSearchParams(window.location.search);
