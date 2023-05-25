@@ -50,44 +50,17 @@ let urlParams = new URLSearchParams(window.location.search);
 
 // declare variables
 let userInt = 0;
-let users = [user1, user2];
-let outerContainer = document.getElementById('outer-container');
-let headerContainer = document.getElementById('header-container');
-let photoContainer = document.getElementById('photo-container');
-let profileContainer = document.getElementById('profile-container');
-let tabsContainer = document.getElementById('tabs-container');
-let tweetsContainer = document.getElementById('tweets-container');
-
-function user1() {
-    var urlParams = new URLSearchParams();
-    urlParams.set("user", "user1");
-    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
-};
-
-function user2() {
-    var urlParams = new URLSearchParams();
-    urlParams.set("user", "user2");
-    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
-};
-
-if(urlParams.toLocaleString() == "user=user1"){
-    userInt = 0;
-} else {
-    userInt = 1;
-};
-
+const users = [user1, user2];
+const outerContainer = document.getElementById('outer-container');
+const headerContainer = document.getElementById('header-container');
+const photoContainer = document.getElementById('photo-container');
+const profileContainer = document.getElementById('profile-container');
+const tabsContainer = document.getElementById('tabs-container');
+const tweetsContainer = document.getElementById('tweets-container');
 
 headerContainer.innerHTML = `
-    <div class="left-arrow">
-        <a href="#"><img src="assets/arrow-left.png"/></a>
-    </div>
     <div class="top-user">
-        <p class="display-name">${users[userInt].displayName}
-            <span class="fa-stack">
-                <i class="fa fa-circle-thin fa-stack-2x"></i>
-                <i class="fa fa-check-circle fa-stack-2x"></i>
-            </span> 
-        </p>
-        <p id="no-of-tweets">${users[userInt].tweets.length} Tweets</p>
+        <p class="name">${users[userInt].displayName}</p>
+        <p id="tweet-count">${users[userInt].tweets.length} Tweets</p>
     </div>
 `;
