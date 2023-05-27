@@ -5,7 +5,7 @@ let user1 = {
     followingCount: 103,
     followerCount: 47900000,
     avatarURL: 'assets/elonmusk.jpg',
-    coverPhotoURL: 'assets/elonmusk-cover.jpeg',
+    coverPhotoURL: 'assets/elonmusk-cover.jpg',
     tweets: [
         {
             text: 'I admit to judging books by their cover',
@@ -29,7 +29,7 @@ let user2 = {
     followingCount: 274,
     followerCount: 53800000,
     avatarURL: 'assets/billgates.jpg',
-    coverPhotoURL: 'assets/billgates-cover.jpeg',
+    coverPhotoURL: 'assets/billgates-cover.jpg',
     tweets: [
         {
             text: 'Everybody asks, how is the next Windows coming along? But nobody asks how is Bill? :/',
@@ -62,5 +62,14 @@ headerContainer.innerHTML = `
     <div class="top-user">
         <p class="name">${users[userInt].displayName}</p>
         <p id="tweet-count">${users[userInt].tweets.length} Tweets</p>
+    </div>
+`;
+
+photoContainer.innerHTML = `
+    <div class="cover-img">
+        <img src="${users[userInt].coverPhotoURL}" width="100%"/>
+    </div>
+    <div class="avatar-img">
+        <img src="${users[userInt].avatarURL}"/>
     </div>
 `;
