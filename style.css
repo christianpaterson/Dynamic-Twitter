@@ -50,7 +50,6 @@ html {
   height: 200px;
   background-size: 100%;
   margin: auto;
-  background-image: url("https://pbs.twimg.com/profile_banners/44196397/1576183471/1080x360");
 }
 
 #photo {
@@ -60,6 +59,19 @@ html {
   position: absolute;
   top: 185px;
   left: 10px;
+}
+
+.avatar-img {
+  padding: 0 15px;
+  position: relative;
+  top: -75px;
+}
+
+.avatar-img > img {
+  width: 140px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid white;
 }
 
 #profile-container {
