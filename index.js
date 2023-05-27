@@ -73,3 +73,22 @@ photoContainer.innerHTML = `
         <img src="${users[userInt].avatarURL}"/>
     </div>
 `;
+
+profileContainer.innerHTML = `
+
+    <div class="profile-info">
+        <p class="display-name">${users[userInt].displayName}</p>
+    </div>
+    <div class="user-name">
+        <p>${users[userInt].userName}</p>
+    </div>
+    <div class="join-date">
+        <p>Joined ${users[userInt].joinedDate}</p>
+    </div>
+    <div class="following">
+        <p class="following-p"><a href="#">${users[userInt].followingCount}</a> Following<p>
+    </div>
+    <div class="followers">
+        <p class="followers-p"><a href="#">${users[userInt].followerCount}</a> Followers<p>
+    </div>
+`;
