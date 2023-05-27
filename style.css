@@ -15,17 +15,18 @@ html {
   margin: auto;
   width: 100%;
   max-width: 600px;
-  border: 1px solid #d1d1d1;
+  border: 1px solid #f1f1f1;
   border-top: none;
   border-bottom: none;
 }
+
+/* ---- header content ---- */
 
 #header-container {
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 10px 15px;
-  z-index: 2;
 }
 
 .name {
@@ -37,6 +38,8 @@ html {
   margin: 0px;
   margin-bottom: 5px;
 }
+
+/* ---- photo content ---- */
 
 #photo-container {
   height: 275px;
@@ -55,13 +58,7 @@ html {
   border: 4px solid white;
 }
 
-.tweet-avatar > img {
-  margin: 0 15px;
-  width: 60px;
-  height: auto;
-  border-radius: 50%;
-  border: 4px solid white;
-}
+/* ---- profile content ---- */
 
 #profile-container {
   padding: 0 16px;
@@ -74,24 +71,63 @@ html {
   letter-spacing: .02rem;
 }
 
+.small-bold {
+  font-size: 15px;
+  font-weight: 700;
+}
+
 .join-date {
   padding: 10px 0;
 }
 
 .follow-container {
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 30px;
 }
 
 .followers {
-  padding: 0 10px;
+  padding: 0 15px;
 }
+
+/* ---- tabs content ---- */
+
+#tabs-container {
+  display: flex;
+}
+
+.tab {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(29, 161, 242);
+  border-bottom: 2px solid white;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 5px 0 15px 0;
+}
+
+.tab:hover {
+  cursor: pointer;
+  background-color: rgba(29, 160, 242, 0.137);
+  border-bottom: 2px solid rgb(29, 161, 242);
+}
+
+/* ---- tweet content ---- */
 
 .tweet-div {
   display: flex;
   padding: 25px 0;
+  border-top: 1px solid #f1f1f1;
 }
 
+.tweet-avatar > img {
+  margin: 0 15px;
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid white;
+}
 
 .tweet-inner-container {
   padding-bottom: 5px;
@@ -102,57 +138,19 @@ html {
   display: flex;
 }
 
+.tweet-display-name {
+    font-size: 16px;
+    font-weight: 700;
+}
+
 .tweet-detail {
-  padding: 0 10px;
+  padding: 0 0 0 5px;
 }
 
-
-
-.domain {
-  height: 60px;
-  color: rgb(91, 112, 131);
-  font-size: 15px;
+.tweet-body {
+  padding-top: 5px;
+  font-size: 14px;
+  color: #2f2f2f;
   font-weight: 400;
-  margin: 0px 20px;
-}
-
-#join-date {
-  display: flex;
-  height: 50px;
-}
-
-#follow-count {
-  display: flex;
-  height: 65px;
-}
-
-#tweets-container {
-  width: 100%;
-  height: 500px;
-  margin: auto;
-}
-
-.tabs-container {
-  display: flex;
-}
-
-.tabs {
-  text-decoration: none;
-  flex-grow: 1;
-  align-self: stretch;
-  text-align: center;
-}
-
-.tab {
-  display: block;
-  color: rgb(29, 161, 242);
-  font-weight: 700;
-  font-size: 15px;
-  margin: 0px;
-  padding: 10px 0px;
-  text-align: center;
-}
-
-.tabs:hover {
-  background-color: rgba(29, 160, 242, 0.137);
+  letter-spacing: .01rem;
 }
