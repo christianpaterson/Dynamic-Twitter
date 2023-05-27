@@ -36,29 +36,10 @@ html {
 #tweet-count {
   margin: 0px;
   margin-bottom: 5px;
-  color: rgb(90, 100, 110);
-  font-size: 13px;
-  font-weight: 400;
 }
 
-.header-text {
-  flex-grow: 8;
-  padding: 5px;
-}
-
-#background {
-  height: 200px;
-  background-size: 100%;
-  margin: auto;
-}
-
-#photo {
-  height: 140px;
-  border-radius: 100%;
-  border: 4px solid white;
-  position: absolute;
-  top: 185px;
-  left: 10px;
+#photo-container {
+  height: 275px;
 }
 
 .avatar-img {
@@ -74,9 +55,58 @@ html {
   border: 4px solid white;
 }
 
-#profile-container {
-  height: 80px;
+.tweet-avatar > img {
+  margin: 0 15px;
+  width: 60px;
+  height: auto;
+  border-radius: 50%;
+  border: 4px solid white;
 }
+
+#profile-container {
+  padding: 0 16px;
+}
+
+.light-gray {
+  color: #6f6f7f;
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: .02rem;
+}
+
+.join-date {
+  padding: 10px 0;
+}
+
+.follow-container {
+  display: flex;
+  padding-bottom: 20px;
+}
+
+.followers {
+  padding: 0 10px;
+}
+
+.tweet-div {
+  display: flex;
+  padding: 25px 0;
+}
+
+
+.tweet-inner-container {
+  padding-bottom: 5px;
+  margin: auto 0;
+}
+
+.tweet-details {
+  display: flex;
+}
+
+.tweet-detail {
+  padding: 0 10px;
+}
+
+
 
 .domain {
   height: 60px;
