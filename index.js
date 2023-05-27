@@ -75,27 +75,41 @@ photoContainer.innerHTML = `
 `;
 
 profileContainer.innerHTML = `
-    <div class="profile-info">
-        <p class="name">${users[userInt].displayName}</p>
+    <div class="name">
+        <p>${users[userInt].displayName}</p>
     </div>
-    <div class="user-name light-gray">
+    <div class="light-gray">
         <p>${users[userInt].userName}</p>
     </div>
     <div class="join-date light-gray">
         <p>Joined ${users[userInt].joinedDate}</p>
     </div>
     <div class="follow-container">
-        <div class="following">
-            <span>${users[userInt].followingCount}</span>
-            <span class="followers-p light-gray"> Following</span>
+        <div>
+            <span class="small-bold">${users[userInt].followingCount}</span>
+            <span class="light-gray"> Following</span>
         </div>
         <div class="followers">
-            <span>${users[userInt].followerCount}</span>
-            <span class="followers-p light-gray"> Followers</span>
-            
+            <span class="small-bold">${users[userInt].followerCount}</span>
+            <span class="light-gray"> Followers</span>
         </div>
     </div>
 `;
+
+tabsContainer.innerHTML = `
+    <div class="tab">
+        <p>Tweets</p>
+    </div>
+    <div class="tab">
+        <p>Replies</p>
+    </div>
+    <div class="tab">
+        <p>Media</p>
+    </div>
+    <div class="tab">
+        <p>Likes</p>
+    </div>
+`
 
 
 for (let i = 0; i < users[userInt].tweets.length; i++) {
@@ -115,8 +129,9 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
         <div class="tweet-avatar"><img src="${users[userInt].avatarURL}"/></div>
         <div class="tweet-inner-container">
             <div class="tweet-details">
-                <div class="tweet-display-name">${users[userInt].displayName}</div>
+                <div class="small-bold">${users[userInt].displayName}</div>
                 <div class="user-name tweet-detail light-gray">${users[userInt].userName}</div>
+                <p class="tweet-detail light-gray">·</p>
                 <div class="tweet-created tweet-detail light-gray">${months[displayMonth] +" "+ arr[0]}</div>
             </div>
             <div class="tweet-body">
