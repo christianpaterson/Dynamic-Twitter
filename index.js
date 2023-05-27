@@ -61,7 +61,7 @@ const tweetsContainer = document.getElementById('tweets-container');
 headerContainer.innerHTML = `
     <div class="top-user">
         <p class="name">${users[userInt].displayName}</p>
-        <p id="tweet-count">${users[userInt].tweets.length} Tweets</p>
+        <p id="tweet-count" class="light-gray">${users[userInt].tweets.length} Tweets</p>
     </div>
 `;
 
@@ -75,20 +75,54 @@ photoContainer.innerHTML = `
 `;
 
 profileContainer.innerHTML = `
-
     <div class="profile-info">
-        <p class="display-name">${users[userInt].displayName}</p>
+        <p class="name">${users[userInt].displayName}</p>
     </div>
-    <div class="user-name">
+    <div class="user-name light-gray">
         <p>${users[userInt].userName}</p>
     </div>
-    <div class="join-date">
+    <div class="join-date light-gray">
         <p>Joined ${users[userInt].joinedDate}</p>
     </div>
-    <div class="following">
-        <p class="following-p"><a href="#">${users[userInt].followingCount}</a> Following<p>
-    </div>
-    <div class="followers">
-        <p class="followers-p"><a href="#">${users[userInt].followerCount}</a> Followers<p>
+    <div class="follow-container">
+        <div class="following">
+            <span>${users[userInt].followingCount}</span>
+            <span class="followers-p light-gray"> Following</span>
+        </div>
+        <div class="followers">
+            <span>${users[userInt].followerCount}</span>
+            <span class="followers-p light-gray"> Followers</span>
+            
+        </div>
     </div>
 `;
+
+
+for (let i = 0; i < users[userInt].tweets.length; i++) {
+    let tweet = users[userInt].tweets[i];
+    let tweetValues = Object.values(tweet);
+    let tweetCreated = tweetValues[1];
+
+    // to dislpay month + date instead of full timestamp
+    let arr = tweetCreated.split('/');
+    const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+    let displayMonth =  parseInt(arr[1],10) - 1;
+
+    const tweetDiv = document.createElement("div");
+    tweetDiv.classList.add("tweet-div");
+    tweetDiv.innerHTML = `
+        <div class="tweet-avatar"><img src="${users[userInt].avatarURL}"/></div>
+        <div class="tweet-inner-container">
+            <div class="tweet-details">
+                <div class="tweet-display-name">${users[userInt].displayName}</div>
+                <div class="user-name tweet-detail light-gray">${users[userInt].userName}</div>
+                <div class="tweet-created tweet-detail light-gray">${months[displayMonth] +" "+ arr[0]}</div>
+            </div>
+            <div class="tweet-body">
+                <p>${tweetValues[0]}</p>
+            </div>
+        </div>
+    `;
+    tweetsContainer.appendChild(tweetDiv);
+}
