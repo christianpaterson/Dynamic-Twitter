@@ -1,5 +1,3 @@
-let urlParams = new URLSearchParams(window.location.search);
-
 // declare variables
 let userInt = 0;
 const users = [user1, user2];
@@ -9,6 +7,7 @@ const photoContainer = document.getElementById('photo-container');
 const profileContainer = document.getElementById('profile-container');
 const tabsContainer = document.getElementById('tabs-container');
 const tweetsContainer = document.getElementById('tweets-container');
+const switchUserContainer = document.getElementById('switch-user-container');
 
 headerContainer.innerHTML = `
         <div class="arrow">
@@ -28,7 +27,7 @@ photoContainer.innerHTML = `
         <div class="avatar-img">
             <img src="${users[userInt].avatarURL}"/>
         </div>
-            <button>Following</button>
+            <button id="follow-button">Following</button>
     </div>
 `;
 
@@ -93,12 +92,12 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
     tweetDiv.classList.add("tweet-div");
     tweetDiv.innerHTML = `
         <div class="tweet-avatar"><img src="${users[userInt].avatarURL}"/></div>
-        <div class="tweet-inner-container">
-            <div class="tweet-details">
-                <div class="small-bold">${users[userInt].displayName}</div>
-                <div class="tweet-detail light-gray">${users[userInt].userName}</div>
-                <p class="tweet-detail light-gray">·</p>
-                <div class="tweet-detail light-gray">${months[displayMonth] +" "+ arr[0]}</div>
+        <div class="tweets-inner-container">
+            <div class="tweets">
+                <div class="small-bold">${users[userInt].displayName} <span>✔</span></div>
+                <div class="tweet light-gray">${users[userInt].userName}</div>
+                <p class="tweet light-gray">·</p>
+                <div class="tweet light-gray">${months[displayMonth] +" "+ arr[0]}</div>
             </div>
             <div class="tweet-body">
                 <p>${tweetValues[0]}</p>
@@ -107,3 +106,54 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
     `;
     tweetsContainer.appendChild(tweetDiv);
 }
+
+switchUserContainer.innerHTML = `
+    <div class="">
+        <div class="switch">
+            <button id="user-1-button">User1</button>
+        </div>
+        <div class="switch">
+            <button id="user-2-button">User2</button>
+        </div>
+    </div>
+
+`
+
+
+
+
+let urlParams = new URLSearchParams(window.location.search);
+
+
+function changeToUser1() {
+    let urlParams = new URLSearchParams();
+    urlParams.set("user", "user1");
+    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
+};
+
+let switchTo1 = document.getElementById('user-1-button');
+switchTo1.addEventListener('click', changeToUser1);
+
+
+
+function changeToUser2() {
+    let urlParams = new URLSearchParams();
+    urlParams.set("user", "user2");
+    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
+};
+
+let switchTo2 = document.getElementById('user-2-button');
+switchTo2.addEventListener('click', changeToUser2);
+
+
+
+if(urlParams.toLocaleString() == "user=user1"){
+    userInt = 0;
+} else {
+    userInt = 1;
+};
+
+
+
+
+
