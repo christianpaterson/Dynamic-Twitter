@@ -21,11 +21,14 @@ headerContainer.innerHTML = `
 `;
 
 photoContainer.innerHTML = `
-    <div class="cover-img">
+    <div>
         <img src="${users[userInt].coverPhotoURL}" width="100%"/>
     </div>
-    <div class="avatar-img">
-        <img src="${users[userInt].avatarURL}"/>
+    <div class="avatar-follow">
+        <div class="avatar-img">
+            <img src="${users[userInt].avatarURL}"/>
+        </div>
+            <button>Follow</button>
     </div>
 `;
 
@@ -45,23 +48,23 @@ profileContainer.innerHTML = `
             <span class="light-gray"> Following</span>
         </div>
         <div class="followers">
-            <span class="small-bold">${users[userInt].followerCount}</span>
+            <span class="small-bold">${users[userInt].followerCount/1000000}M</span>
             <span class="light-gray"> Followers</span>
         </div>
     </div>
 `;
 
 tabsContainer.innerHTML = `
-    <div class="tab active">
+    <div class="tab light-gray active">
         <p>Tweets</p>
     </div>
-    <div class="tab">
+    <div class="tab light-gray">
         <p>Replies</p>
     </div>
-    <div class="tab">
+    <div class="tab light-gray">
         <p>Media</p>
     </div>
-    <div class="tab">
+    <div class="tab light-gray">
         <p>Likes</p>
     </div>
 `
@@ -93,9 +96,9 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
         <div class="tweet-inner-container">
             <div class="tweet-details">
                 <div class="small-bold">${users[userInt].displayName}</div>
-                <div class="user-name tweet-detail light-gray">${users[userInt].userName}</div>
+                <div class="tweet-detail light-gray">${users[userInt].userName}</div>
                 <p class="tweet-detail light-gray">·</p>
-                <div class="tweet-created tweet-detail light-gray">${months[displayMonth] +" "+ arr[0]}</div>
+                <div class="tweet-detail light-gray">${months[displayMonth] +" "+ arr[0]}</div>
             </div>
             <div class="tweet-body">
                 <p>${tweetValues[0]}</p>
