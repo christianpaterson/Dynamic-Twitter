@@ -108,7 +108,7 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
 }
 
 switchUserContainer.innerHTML = `
-    <div class="">
+    <div class="switch-users">
         <div class="switch">
             <button id="user-1-button">User1</button>
         </div>
@@ -119,9 +119,6 @@ switchUserContainer.innerHTML = `
 
 `
 
-
-
-
 let urlParams = new URLSearchParams(window.location.search);
 
 
@@ -131,29 +128,20 @@ function changeToUser1() {
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
-let switchTo1 = document.getElementById('user-1-button');
-switchTo1.addEventListener('click', changeToUser1);
-
-
-
 function changeToUser2() {
     let urlParams = new URLSearchParams();
     urlParams.set("user", "user2");
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
+// if(urlParams.toLocaleString() == "user=user1") {
+//     userInt = 0;
+// } else {
+//     userInt = 1;
+// };
+
+let switchTo1 = document.getElementById('user-1-button');
+switchTo1.addEventListener('click', changeToUser1);
+
 let switchTo2 = document.getElementById('user-2-button');
 switchTo2.addEventListener('click', changeToUser2);
-
-
-
-if(urlParams.toLocaleString() == "user=user1"){
-    userInt = 0;
-} else {
-    userInt = 1;
-};
-
-
-
-
-
