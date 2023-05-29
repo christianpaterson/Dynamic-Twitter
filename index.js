@@ -15,7 +15,7 @@ headerContainer.innerHTML = `
             <img src="assets/arrow.png"/>
         </div>
         <div class="user-content">
-            <p class="name">${users[userInt].displayName}</p>
+            <p class="name">${users[userInt].displayName} <span>✔</span></p>
             <p id="tweet-count" class="light-gray">${users[userInt].tweets.length} Tweets</p>
         </div>
 `;
@@ -28,19 +28,19 @@ photoContainer.innerHTML = `
         <div class="avatar-img">
             <img src="${users[userInt].avatarURL}"/>
         </div>
-            <button>Follow</button>
+            <button>Following</button>
     </div>
 `;
 
 profileContainer.innerHTML = `
-    <div class="name">
-        <p>${users[userInt].displayName}</p>
+    <div>
+        <p class="name">${users[userInt].displayName} <span>✔</span></p>
     </div>
     <div class="light-gray">
         <p>${users[userInt].userName}</p>
     </div>
     <div class="join-date light-gray">
-        <p>Joined ${users[userInt].joinedDate}</p>
+        <p>🗓 Joined ${users[userInt].joinedDate}</p>
     </div>
     <div class="follow-container">
         <div>
