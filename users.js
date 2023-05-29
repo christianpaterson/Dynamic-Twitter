@@ -1,28 +1,4 @@
 let user1 = {
-    userName: '@elonmusk',
-    displayName: 'Elon Musk',
-    joinedDate: 'June 2009',
-    followingCount: 103,
-    followerCount: 47900000,
-    avatarURL: 'assets/elonmusk.jpg',
-    coverPhotoURL: 'assets/elonmusk-cover.jpg',
-    tweets: [
-        {
-            text: 'I admit to judging books by their cover',
-            timestamp: '2/10/2021 00:01:20'
-        },
-        {
-            text: 'Starship to the moon',
-            timestamp: '2/09/2021 18:37:12'
-        },
-        {
-            text: 'Out on launch pad, engine swap underway',
-            timestamp: '2/09/2021 12:11:51'
-        }
-    ]
-};
-
-let user2 = {
     userName: '@BillGates',
     displayName: 'Bill Gates',
     joinedDate: 'June 2009',
@@ -41,6 +17,30 @@ let user2 = {
         },
         {
             text: 'In 2020, I read a book every hour.',
+            timestamp: '2/09/2021 12:11:51'
+        }
+    ]
+};
+
+let user2 = {
+    userName: '@elonmusk',
+    displayName: 'Elon Musk',
+    joinedDate: 'June 2009',
+    followingCount: 103,
+    followerCount: 47900000,
+    avatarURL: 'assets/elonmusk.jpg',
+    coverPhotoURL: 'assets/elonmusk-cover.jpg',
+    tweets: [
+        {
+            text: 'I admit to judging books by their cover',
+            timestamp: '2/10/2021 00:01:20'
+        },
+        {
+            text: 'Starship to the moon',
+            timestamp: '2/09/2021 18:37:12'
+        },
+        {
+            text: 'Out on launch pad, engine swap underway',
             timestamp: '2/09/2021 12:11:51'
         }
     ]
