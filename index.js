@@ -14,9 +14,9 @@ function changeToUser2() {
 };
 
 if(urlParams.toLocaleString() == "user=user1") {
-    userInt = 0;
-} else {
     userInt = 1;
+} else {
+    userInt = 0;
 };
 
 // Declare variables
