@@ -1,5 +1,25 @@
-// declare variables
+let urlParams = new URLSearchParams(window.location.search);
 let userInt = 0;
+
+function changeToUser1() {
+    let urlParams = new URLSearchParams();
+    urlParams.set("user", "user1");
+    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
+};
+
+function changeToUser2() {
+    let urlParams = new URLSearchParams();
+    urlParams.set("user", "user2");
+    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
+};
+
+if(urlParams.toLocaleString() == "user=user1") {
+    userInt = 0;
+} else {
+    userInt = 1;
+};
+
+// Declare variables
 const users = [user1, user2];
 const outerContainer = document.getElementById('outer-container');
 const headerContainer = document.getElementById('header-container');
@@ -68,6 +88,7 @@ tabsContainer.innerHTML = `
     </div>
 `
 
+// Event listener for showing active tab
 let tabs = tabsContainer.getElementsByClassName("tab");
 for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function() {
@@ -77,12 +98,13 @@ for (let i = 0; i < tabs.length; i++) {
     });
 };
 
+// Create, fill, and append tweetDiv for each tweet
 for (let i = 0; i < users[userInt].tweets.length; i++) {
     let tweet = users[userInt].tweets[i];
     let tweetValues = Object.values(tweet);
     let tweetCreated = tweetValues[1];
 
-    // to dislpay month + date instead of full timestamp
+    // Dislpay month & day instead of full timestamp
     let arr = tweetCreated.split('/');
     const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
@@ -107,6 +129,7 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
     tweetsContainer.appendChild(tweetDiv);
 }
 
+// Container for switching users buttons
 switchUserContainer.innerHTML = `
     <div class="switch-users">
         <div class="switch">
@@ -119,27 +142,7 @@ switchUserContainer.innerHTML = `
 
 `
 
-let urlParams = new URLSearchParams(window.location.search);
-
-
-function changeToUser1() {
-    let urlParams = new URLSearchParams();
-    urlParams.set("user", "user1");
-    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
-};
-
-function changeToUser2() {
-    let urlParams = new URLSearchParams();
-    urlParams.set("user", "user2");
-    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
-};
-
-if(urlParams.toLocaleString() == "user=user1") {
-    userInt = 0;
-} else {
-    userInt = 1;
-};
-
+// Event listeners to switch users
 let switchTo1 = document.getElementById('user-1-button');
 switchTo1.addEventListener('click', changeToUser1);
 
