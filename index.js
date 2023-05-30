@@ -13,7 +13,7 @@ function changeToUser2() {
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
-if(urlParams.toLocaleString() == "user=user1") {
+if(urlParams.toLocaleString() == "user=user2") {
     userInt = 1;
 } else {
     userInt = 0;
