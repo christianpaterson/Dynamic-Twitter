@@ -134,11 +134,11 @@ function changeToUser2() {
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
-// if(urlParams.toLocaleString() == "user=user1") {
-//     userInt = 0;
-// } else {
-//     userInt = 1;
-// };
+if(urlParams.toLocaleString() == "user=user1") {
+    userInt = 0;
+} else {
+    userInt = 1;
+};
 
 let switchTo1 = document.getElementById('user-1-button');
 switchTo1.addEventListener('click', changeToUser1);
