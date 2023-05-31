@@ -1,3 +1,4 @@
+//URLParams for switching users
 let urlParams = new URLSearchParams(window.location.search);
 let userInt = 0;
 
@@ -19,6 +20,7 @@ if(urlParams.toLocaleString() == "user=user2") {
     userInt = 0;
 };
 
+
 // Declare variables
 const users = [user1, user2];
 const outerContainer = document.getElementById('outer-container');
@@ -29,6 +31,7 @@ const tabsContainer = document.getElementById('tabs-container');
 const tweetsContainer = document.getElementById('tweets-container');
 const switchUserContainer = document.getElementById('switch-user-container');
 
+
 headerContainer.innerHTML = `
         <div class="arrow">
             <img src="assets/arrow.png"/>
@@ -38,6 +41,7 @@ headerContainer.innerHTML = `
             <p id="tweet-count" class="light-gray">${users[userInt].tweets.length} Tweets</p>
         </div>
 `;
+
 
 photoContainer.innerHTML = `
     <div>
@@ -50,6 +54,7 @@ photoContainer.innerHTML = `
             <button id="follow-button">Following</button>
     </div>
 `;
+
 
 profileContainer.innerHTML = `
     <div>
@@ -73,6 +78,7 @@ profileContainer.innerHTML = `
     </div>
 `;
 
+
 tabsContainer.innerHTML = `
     <div class="tab light-gray active">
         <p>Tweets</p>
@@ -88,6 +94,7 @@ tabsContainer.innerHTML = `
     </div>
 `
 
+
 // Event listener for showing active tab
 let tabs = tabsContainer.getElementsByClassName("tab");
 for (let i = 0; i < tabs.length; i++) {
@@ -97,6 +104,7 @@ for (let i = 0; i < tabs.length; i++) {
         this.className += " active";
     });
 };
+
 
 // Create, fill, and append tweetDiv for each tweet
 for (let i = 0; i < users[userInt].tweets.length; i++) {
@@ -129,6 +137,7 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
     tweetsContainer.appendChild(tweetDiv);
 }
 
+
 // Container for switching users buttons
 switchUserContainer.innerHTML = `
     <div class="switch-users">
@@ -141,6 +150,7 @@ switchUserContainer.innerHTML = `
     </div>
 
 `
+
 
 // Event listeners to switch users
 let switchTo1 = document.getElementById('user-1-button');
