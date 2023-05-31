@@ -10,6 +10,7 @@ The challenge was to build out a dynamic twitter page that could accommodate any
 <li>HTML5</li>
 <li>CSS</li>
 <li>JavaScript</li>
+<li>DOM API</li>
 <li>GIT</li>
 <li>GITHUB</li>
 </ul>
