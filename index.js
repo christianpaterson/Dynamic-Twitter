@@ -1,28 +1,18 @@
 //URLParams for switching users
 let urlParams = new URLSearchParams(window.location.search);
-let userInt = 0;
+let userInt = urlParams.get("user");
 
 function changeToUser1() {
-    let urlParams = new URLSearchParams();
     urlParams.set("user", "user1");
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
 function changeToUser2() {
-    let urlParams = new URLSearchParams();
     urlParams.set("user", "user2");
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
-if(urlParams.toLocaleString() == "user=user2") {
-    userInt = 1;
-} else {
-    userInt = 0;
-};
-
-
 // Declare variables
-const users = [user1, user2];
 const outerContainer = document.getElementById('outer-container');
 const headerContainer = document.getElementById('header-container');
 const photoContainer = document.getElementById('photo-container');
