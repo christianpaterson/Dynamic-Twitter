@@ -3,12 +3,7 @@ const urlParams = new URLSearchParams(window.location.search);
 
 
 // Set default and selected userKey
-let userKey;
-if(urlParams.get("user") === null) {
-    userKey = "user1";
-} else {
-    userKey = urlParams.get("user");
-}
+const userKey = urlParams.get("user");
 
 
 // Change user function
