@@ -1,6 +1,13 @@
 //URLParams for switching users
 const urlParams = new URLSearchParams(window.location.search);
-const userKey = urlParams.get("user");
+
+let userKey;
+if(urlParams.get("user") === null) {
+    userKey = "user1";
+} else {
+    userKey = urlParams.get("user");
+}
+
 
 function changeToUser1() {
     urlParams.set("user", "user1");
