@@ -163,10 +163,10 @@ switchUserContainer.innerHTML = `
 // Event listeners to switch users
 let switchTo1 = document.getElementById('user-1-button');
 switchTo1.addEventListener('click', function() {
-    changeUser(userKey);
+    changeUser("user1");
 });
 
 let switchTo2 = document.getElementById('user-2-button');
 switchTo2.addEventListener('click', function() {
-    changeUser(userKey);
+    changeUser("user2");
 });
