@@ -1,6 +1,6 @@
 //URLParams for switching users
-let urlParams = new URLSearchParams(window.location.search);
-let userInt = urlParams.get("user");
+const urlParams = new URLSearchParams(window.location.search);
+const userKey = urlParams.get("user");
 
 function changeToUser1() {
     urlParams.set("user", "user1");
@@ -27,19 +27,19 @@ headerContainer.innerHTML = `
             <img src="assets/arrow.png"/>
         </div>
         <div class="user-content">
-            <p class="name">${users[userInt].displayName} <span>✔</span></p>
-            <p id="tweet-count" class="light-gray">${users[userInt].tweets.length} Tweets</p>
+            <p class="name">${users[userKey].displayName} <span>✔</span></p>
+            <p id="tweet-count" class="light-gray">${users[userKey].tweets.length} Tweets</p>
         </div>
 `;
 
 
 photoContainer.innerHTML = `
     <div>
-        <img src="${users[userInt].coverPhotoURL}" width="100%"/>
+        <img src="${users[userKey].coverPhotoURL}" width="100%"/>
     </div>
     <div class="avatar-follow">
         <div class="avatar-img">
-            <img src="${users[userInt].avatarURL}"/>
+            <img src="${users[userKey].avatarURL}"/>
         </div>
             <button id="follow-button">Following</button>
     </div>
@@ -48,21 +48,21 @@ photoContainer.innerHTML = `
 
 profileContainer.innerHTML = `
     <div>
-        <p class="name">${users[userInt].displayName} <span>✔</span></p>
+        <p class="name">${users[userKey].displayName} <span>✔</span></p>
     </div>
     <div class="light-gray">
-        <p>${users[userInt].userName}</p>
+        <p>${users[userKey].userName}</p>
     </div>
     <div class="join-date light-gray">
-        <p>🗓 Joined ${users[userInt].joinedDate}</p>
+        <p>🗓 Joined ${users[userKey].joinedDate}</p>
     </div>
     <div class="follow-container">
         <div>
-            <span class="small-bold">${users[userInt].followingCount}</span>
+            <span class="small-bold">${users[userKey].followingCount}</span>
             <span class="light-gray"> Following</span>
         </div>
         <div class="followers">
-            <span class="small-bold">${users[userInt].followerCount/1000000}M</span>
+            <span class="small-bold">${users[userKey].followerCount/1000000}M</span>
             <span class="light-gray"> Followers</span>
         </div>
     </div>
@@ -97,8 +97,8 @@ for (let i = 0; i < tabs.length; i++) {
 
 
 // Create, fill, and append tweetDiv for each tweet
-for (let i = 0; i < users[userInt].tweets.length; i++) {
-    let tweet = users[userInt].tweets[i];
+for (let i = 0; i < users[userKey].tweets.length; i++) {
+    let tweet = users[userKey].tweets[i];
     let tweetValues = Object.values(tweet);
     let tweetCreated = tweetValues[1];
 
@@ -111,11 +111,11 @@ for (let i = 0; i < users[userInt].tweets.length; i++) {
     const tweetDiv = document.createElement("div");
     tweetDiv.classList.add("tweet-div");
     tweetDiv.innerHTML = `
-        <div class="tweet-avatar"><img src="${users[userInt].avatarURL}"/></div>
+        <div class="tweet-avatar"><img src="${users[userKey].avatarURL}"/></div>
         <div class="tweets-inner-container">
             <div class="tweets">
-                <div class="small-bold">${users[userInt].displayName} <span>✔</span></div>
-                <div class="tweet light-gray">${users[userInt].userName}</div>
+                <div class="small-bold">${users[userKey].displayName} <span>✔</span></div>
+                <div class="tweet light-gray">${users[userKey].userName}</div>
                 <p class="tweet light-gray">·</p>
                 <div class="tweet light-gray">${months[displayMonth] +" "+ arr[0]}</div>
             </div>
