@@ -12,8 +12,8 @@ if(urlParams.get("user") === null) {
 
 
 // Change user function
-function changeUser(userKey) {
-    urlParams.set("user", userKey);
+function changeUser(key) {
+    urlParams.set("user", key);
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
