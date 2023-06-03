@@ -1,6 +1,8 @@
-//URLParams for switching users
+// URLParams for switching users
 const urlParams = new URLSearchParams(window.location.search);
 
+
+// Set default and selected userKey
 let userKey;
 if(urlParams.get("user") === null) {
     userKey = "user1";
@@ -9,15 +11,12 @@ if(urlParams.get("user") === null) {
 }
 
 
-function changeToUser1() {
-    urlParams.set("user", "user1");
+// Change user function
+function changeUser(userKey) {
+    urlParams.set("user", userKey);
     window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
 };
 
-function changeToUser2() {
-    urlParams.set("user", "user2");
-    window.location.href = "https://christianpaterson.github.io/Dynamic-Twitter-Clone/?" + urlParams.toString();
-};
 
 // Declare variables
 const outerContainer = document.getElementById('outer-container');
@@ -93,28 +92,29 @@ tabsContainer.innerHTML = `
 
 
 // Event listener for showing active tab
-let tabs = tabsContainer.getElementsByClassName("tab");
+const tabs = tabsContainer.getElementsByClassName("tab");
 for (let i = 0; i < tabs.length; i++) {
     tabs[i].addEventListener("click", function() {
-        let active = document.getElementsByClassName("active");
+        const active = document.getElementsByClassName("active");
         active[0].className = active[0].className.replace(" active", "");
         this.className += " active";
     });
 };
 
 
-// Create, fill, and append tweetDiv for each tweet
+// For each tweet...
 for (let i = 0; i < users[userKey].tweets.length; i++) {
+
+    // Get tweet content and timestamp
     let tweet = users[userKey].tweets[i];
-    let tweetValues = Object.values(tweet);
-    let tweetCreated = tweetValues[1];
+    let tweetValuesArray = Object.values(tweet);
+    let tweetContent = tweetValuesArray[0];
+    let tweetTimestamp = tweetValuesArray[1];
 
-    // Dislpay month & day instead of full timestamp
-    let arr = tweetCreated.split('/');
-    const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
-    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
-    let displayMonth =  parseInt(arr[1],10) - 1;
+    // Format the timestamp
+    let tweetDate = formatDate(tweetTimestamp);
 
+    // Create, fill, and append tweet content
     const tweetDiv = document.createElement("div");
     tweetDiv.classList.add("tweet-div");
     tweetDiv.innerHTML = `
@@ -124,14 +124,25 @@ for (let i = 0; i < users[userKey].tweets.length; i++) {
                 <div class="small-bold">${users[userKey].displayName} <span>✔</span></div>
                 <div class="tweet light-gray">${users[userKey].userName}</div>
                 <p class="tweet light-gray">·</p>
-                <div class="tweet light-gray">${months[displayMonth] +" "+ arr[0]}</div>
+                <div class="tweet light-gray">${tweetDate}</div>
             </div>
             <div class="tweet-body">
-                <p>${tweetValues[0]}</p>
+                <p>${tweetContent}</p>
             </div>
         </div>
     `;
     tweetsContainer.appendChild(tweetDiv);
+}
+
+
+// Format date function
+function formatDate(time) {
+    let array = time.split('/');
+    const months = [ "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+    "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" ];
+    let monthNumber = parseInt(array[0]);
+    let displayDay = array[1];
+    return months[monthNumber] + " " + displayDay;
 }
 
 
@@ -151,7 +162,7 @@ switchUserContainer.innerHTML = `
 
 // Event listeners to switch users
 let switchTo1 = document.getElementById('user-1-button');
-switchTo1.addEventListener('click', changeToUser1);
+switchTo1.addEventListener('click', changeUser(userKey));
 
 let switchTo2 = document.getElementById('user-2-button');
-switchTo2.addEventListener('click', changeToUser2);
+switchTo2.addEventListener('click', changeUser(userKey));
