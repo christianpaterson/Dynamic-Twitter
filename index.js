@@ -3,7 +3,12 @@ const urlParams = new URLSearchParams(window.location.search);
 
 
 // Set default and selected userKey
-const userKey = urlParams.get("user");
+let userKey;
+if(urlParams.get("user") === null) {
+    userKey = "user1";
+} else {
+    userKey = urlParams.get("user");
+}
 
 
 // Change user function
@@ -157,7 +162,11 @@ switchUserContainer.innerHTML = `
 
 // Event listeners to switch users
 let switchTo1 = document.getElementById('user-1-button');
-switchTo1.addEventListener('click', changeUser(userKey));
+switchTo1.addEventListener('click', function() {
+    changeUser(userKey);
+});
 
 let switchTo2 = document.getElementById('user-2-button');
-switchTo2.addEventListener('click', changeUser(userKey));
+switchTo2.addEventListener('click', function() {
+    changeUser(userKey);
+});
